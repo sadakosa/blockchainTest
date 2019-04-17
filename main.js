@@ -14,8 +14,9 @@ class Block {
 		return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data) + this.nonce).toString();
 	}
 
-	mineBlock(difficulty) { 
-		//how do they know that this can be calculated easily??? How do they know that SHA256 will give back 0000 in the front????
+	mineBlock(difficulty) { //to implement proof of work
+		//make the computer brute force guess how many zeros should be at the top of the hash
+		//Question: how do they know that this can be calculated easily??? How do they know that SHA256 will give back 0000 in the front????
 		while(this.hash.substring(0, difficulty) !== Array(difficulty + 1).join('0')) {
 			this.nonce ++;
 			this.hash = this.calculateHash();
