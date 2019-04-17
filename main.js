@@ -1,3 +1,6 @@
+//if blockchain exported, use the code below:
+// const (Blockchain, Transaction) = require('./blockchain');
+
 const SHA256 = require('crypto-js/sha256');
 
 class Block {
